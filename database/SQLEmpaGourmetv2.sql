@@ -1,9 +1,8 @@
-
-
 CREATE DATABASE EmpaGourmet;
 GO
 USE EmpaGourmet;
 GO
+
 
 
 CREATE TABLE ROL(
@@ -48,7 +47,9 @@ CREATE TABLE REGISTRARJORNADA(
     CantidadPresupuestada INT NOT NULL,
     CantidadDespachada INT NOT NULL,
     IdProducto INT NOT NULL,
-    CONSTRAINT FK_RegistrarJornada_Producto FOREIGN KEY (IdProducto) REFERENCES PRODUCTO(IdProducto)
+    IdUsuario INT NOT NULL,  
+    CONSTRAINT FK_RegistrarJornada_Producto FOREIGN KEY (IdProducto) REFERENCES PRODUCTO(IdProducto),
+    CONSTRAINT FK_RegistrarJornada_Usuario FOREIGN KEY (IdUsuario) REFERENCES USUARIO(IdUsuario) 
 );
 
 CREATE TABLE TRAZABILIDADAUDITORIA(
@@ -60,6 +61,7 @@ CREATE TABLE TRAZABILIDADAUDITORIA(
     CONSTRAINT FK_Auditoria_Usuario FOREIGN KEY (IdUsuario) REFERENCES USUARIO(IdUsuario)
 );
 GO
+
 
 
 CREATE PROCEDURE sp_InsertarProducto
@@ -92,13 +94,11 @@ BEGIN
 END;
 GO
 
-
 CREATE PROCEDURE sp_ConsultarProducto
     @IdProducto INT = NULL
 AS
 BEGIN
     SET NOCOUNT ON;
-    
     IF @IdProducto IS NULL OR @IdProducto = 0
         SELECT p.IdProducto, p.NombreProd, p.Unidad, p.Observacion, p.Precio, c.NombreCat, p.IdCategoria, p.StockDisponible
         FROM PRODUCTO p
@@ -111,7 +111,6 @@ BEGIN
         WHERE p.IdProducto = @IdProducto AND p.Estado = 1;
 END;
 GO
-
 
 CREATE PROCEDURE sp_ActualizarProducto
     @IdProducto INT,
@@ -148,7 +147,6 @@ BEGIN
 END;
 GO
 
-
 CREATE PROCEDURE sp_EliminarProducto
     @IdProducto INT,
     @IdUsuario INT
@@ -157,7 +155,6 @@ BEGIN
     SET NOCOUNT ON;
     BEGIN TRANSACTION;
     BEGIN TRY
-        
         UPDATE PRODUCTO 
         SET Estado = 0 
         WHERE IdProducto = @IdProducto;
