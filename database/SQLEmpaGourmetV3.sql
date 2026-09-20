@@ -77,6 +77,7 @@ BEGIN
     SET NOCOUNT ON;
     BEGIN TRANSACTION;
     BEGIN TRY
+    EXEC sp_set_session_context 'IdUsuario', @IdUsuario;
         INSERT INTO PRODUCTO (NombreProd, Unidad, Observacion, Precio, IdCategoria, StockDisponible, Estado)
         VALUES (@NombreProd, @Unidad, @Observacion, @Precio, @IdCategoria, @StockDisponible, 1);
         
@@ -126,6 +127,7 @@ BEGIN
     SET NOCOUNT ON;
     BEGIN TRANSACTION;
     BEGIN TRY
+    EXEC sp_set_session_context 'IdUsuario', @IdUsuario;
         UPDATE PRODUCTO 
         SET NombreProd = @NombreProd,
             Unidad = @Unidad,
@@ -155,6 +157,7 @@ BEGIN
     SET NOCOUNT ON;
     BEGIN TRANSACTION;
     BEGIN TRY
+    EXEC sp_set_session_context 'IdUsuario', @IdUsuario;
         UPDATE PRODUCTO 
         SET Estado = 0 
         WHERE IdProducto = @IdProducto;
@@ -168,5 +171,56 @@ BEGIN
         ROLLBACK TRANSACTION;
         THROW;
     END CATCH
+END;
+GO
+
+--LOG DE SEGURIDAD Y TRIGGER (AUDITORIA Y VALIDACIÓN) 
+
+CREATE TABLE log_Productos(
+LogID INT IDENTITY(1,1) PRIMARY KEY,
+IdProducto INT,
+NombreProducto Varchar(100),
+Accion varchar(20),
+IdUsuario INT,
+Fecha Datetime default getdate()
+);
+GO
+
+
+CREATE TRIGGER tr_AuditoriaProductos
+ON PRODUCTO 
+AFTER INSERT, UPDATE, DELETE 
+AS 
+BEGIN
+    SET NOCOUNT ON;
+
+
+    IF EXISTS(SELECT 1 FROM inserted WHERE Precio <= 0)
+    BEGIN
+        ROLLBACK TRANSACTION;
+        RAISERROR('Error la Regla: El precio de un producto debe ser mayor a $0.', 16, 1);
+        RETURN;
+    END
+
+    --  INSERCIÓN
+    IF EXISTS (SELECT 1 FROM inserted) AND NOT EXISTS (SELECT 1 FROM deleted)
+    BEGIN
+        INSERT INTO Log_Productos (IdProducto, NombreProducto, Accion, IdUsuario, Fecha)
+        SELECT IdProducto, NombreProd, 'INSERTÓ', CAST(session_context(N'IdUsuario') AS INT), getdate() FROM inserted;
+    END
+
+    -- ACTUALIZACIÓN 
+    IF EXISTS (SELECT 1 FROM inserted) AND EXISTS (SELECT 1 FROM deleted)
+    BEGIN
+        INSERT INTO Log_Productos (IdProducto, NombreProducto, Accion, IdUsuario, Fecha)
+        SELECT IdProducto, NombreProd, 'ACTUALIZÓ', CAST(session_context(N'IdUsuario') AS INT), getdate()  FROM inserted;
+    END
+    
+    -- ELIMINACIÓN
+    IF NOT EXISTS (SELECT 1 FROM inserted) AND EXISTS (SELECT 1 FROM deleted)
+    BEGIN
+        INSERT INTO Log_Productos (IdProducto, NombreProducto, Accion, IdUsuario, Fecha)
+        SELECT IdProducto, NombreProd, 'ELIMINÓ',CAST(session_context(N'IdUsuario') AS INT), getdate() FROM deleted;
+    END
 END;
 GO

@@ -1,0 +1,16 @@
+C:\Users\ProyectoMantenedor\src\PM.DAL\bin\Debug\net10.0\PM.DAL.deps.json
+C:\Users\ProyectoMantenedor\src\PM.DAL\bin\Debug\net10.0\PM.DAL.dll
+C:\Users\ProyectoMantenedor\src\PM.DAL\bin\Debug\net10.0\PM.DAL.pdb
+C:\Users\ProyectoMantenedor\src\PM.DAL\bin\Debug\net10.0\PM.Entities.dll
+C:\Users\ProyectoMantenedor\src\PM.DAL\bin\Debug\net10.0\PM.Entities.pdb
+C:\Users\ProyectoMantenedor\src\PM.DAL\obj\Debug\net10.0\PM.DAL.csproj.AssemblyReference.cache
+C:\Users\ProyectoMantenedor\src\PM.DAL\obj\Debug\net10.0\PM.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ProyectoMantenedor\src\PM.DAL\obj\Debug\net10.0\PM.DAL.AssemblyInfoInputs.cache
+C:\Users\ProyectoMantenedor\src\PM.DAL\obj\Debug\net10.0\PM.DAL.AssemblyInfo.cs
+C:\Users\ProyectoMantenedor\src\PM.DAL\obj\Debug\net10.0\PM.DAL.csproj.CoreCompileInputs.cache
+C:\Users\ProyectoMantenedor\src\PM.DAL\obj\Debug\net10.0\PM.DAL.sourcelink.json
+C:\Users\ProyectoMantenedor\src\PM.DAL\obj\Debug\net10.0\PM.DAL.csproj.Up2Date
+C:\Users\ProyectoMantenedor\src\PM.DAL\obj\Debug\net10.0\PM.DAL.dll
+C:\Users\ProyectoMantenedor\src\PM.DAL\obj\Debug\net10.0\refint\PM.DAL.dll
+C:\Users\ProyectoMantenedor\src\PM.DAL\obj\Debug\net10.0\PM.DAL.pdb
+C:\Users\ProyectoMantenedor\src\PM.DAL\obj\Debug\net10.0\ref\PM.DAL.dll

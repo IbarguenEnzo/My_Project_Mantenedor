@@ -8,4 +8,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PM.BLL\PM.BLL.csproj" />
+    <ProjectReference Include="..\PM.Entities\PM.Entities.csproj" />
+  </ItemGroup>
+
 </Project>

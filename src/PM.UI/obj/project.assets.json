@@ -1,11 +1,68 @@
 {
   "version": 4,
   "targets": {
-    "net10.0-windows": {}
+    "net10.0-windows": {
+      "PM.BLL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "PM.DAL": "1.0.0",
+          "PM.Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PM.BLL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PM.BLL.dll": {}
+        }
+      },
+      "PM.DAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "PM.Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PM.DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PM.DAL.dll": {}
+        }
+      },
+      "PM.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/PM.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PM.Entities.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "PM.BLL/1.0.0": {
+      "type": "project",
+      "path": "../PM.BLL/PM.BLL.csproj",
+      "msbuildProject": "../PM.BLL/PM.BLL.csproj"
+    },
+    "PM.DAL/1.0.0": {
+      "type": "project",
+      "path": "../PM.DAL/PM.DAL.csproj",
+      "msbuildProject": "../PM.DAL/PM.DAL.csproj"
+    },
+    "PM.Entities/1.0.0": {
+      "type": "project",
+      "path": "../PM.Entities/PM.Entities.csproj",
+      "msbuildProject": "../PM.Entities/PM.Entities.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net10.0-windows": []
+    "net10.0-windows": [
+      "PM.BLL >= 1.0.0",
+      "PM.Entities >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\enzoi\\.nuget\\packages\\": {},
@@ -40,7 +97,14 @@
         "net10.0-windows": {
           "framework": "net10.0-windows7.0",
           "targetAlias": "net10.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\ProyectoMantenedor\\src\\PM.BLL\\PM.BLL.csproj": {
+              "projectPath": "C:\\Users\\ProyectoMantenedor\\src\\PM.BLL\\PM.BLL.csproj"
+            },
+            "C:\\Users\\ProyectoMantenedor\\src\\PM.Entities\\PM.Entities.csproj": {
+              "projectPath": "C:\\Users\\ProyectoMantenedor\\src\\PM.Entities\\PM.Entities.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -78,7 +142,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

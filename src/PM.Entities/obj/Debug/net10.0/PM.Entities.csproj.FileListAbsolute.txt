@@ -1,0 +1,13 @@
+C:\Users\ProyectoMantenedor\src\PM.Entities\bin\Debug\net10.0\PM.Entities.deps.json
+C:\Users\ProyectoMantenedor\src\PM.Entities\bin\Debug\net10.0\PM.Entities.dll
+C:\Users\ProyectoMantenedor\src\PM.Entities\bin\Debug\net10.0\PM.Entities.pdb
+C:\Users\ProyectoMantenedor\src\PM.Entities\obj\Debug\net10.0\PM.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ProyectoMantenedor\src\PM.Entities\obj\Debug\net10.0\PM.Entities.AssemblyInfoInputs.cache
+C:\Users\ProyectoMantenedor\src\PM.Entities\obj\Debug\net10.0\PM.Entities.AssemblyInfo.cs
+C:\Users\ProyectoMantenedor\src\PM.Entities\obj\Debug\net10.0\PM.Entities.csproj.CoreCompileInputs.cache
+C:\Users\ProyectoMantenedor\src\PM.Entities\obj\Debug\net10.0\PM.Entities.sourcelink.json
+C:\Users\ProyectoMantenedor\src\PM.Entities\obj\Debug\net10.0\PM.Entities.dll
+C:\Users\ProyectoMantenedor\src\PM.Entities\obj\Debug\net10.0\refint\PM.Entities.dll
+C:\Users\ProyectoMantenedor\src\PM.Entities\obj\Debug\net10.0\PM.Entities.pdb
+C:\Users\ProyectoMantenedor\src\PM.Entities\obj\Debug\net10.0\ref\PM.Entities.dll
+C:\Users\ProyectoMantenedor\src\PM.Entities\obj\Debug\net10.0\PM.Entit.64C9F4B4.Up2Date

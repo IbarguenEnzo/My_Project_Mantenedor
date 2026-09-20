@@ -1,0 +1,73 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "PM.UI/1.0.0": {
+        "dependencies": {
+          "PM.BLL": "1.0.0",
+          "PM.Entities": "1.0.0"
+        },
+        "runtime": {
+          "PM.UI.dll": {}
+        }
+      },
+      "PM.BLL/1.0.0": {
+        "dependencies": {
+          "PM.DAL": "1.0.0",
+          "PM.Entities": "1.0.0"
+        },
+        "runtime": {
+          "PM.BLL.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "PM.DAL/1.0.0": {
+        "dependencies": {
+          "PM.Entities": "1.0.0"
+        },
+        "runtime": {
+          "PM.DAL.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "PM.Entities/1.0.0": {
+        "runtime": {
+          "PM.Entities.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PM.UI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PM.BLL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PM.DAL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PM.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

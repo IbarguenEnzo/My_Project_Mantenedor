@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="src/PM.BLL/PM.BLL.csproj" />
+  <Project Path="src/PM.DAL/PM.DAL.csproj" />
+  <Project Path="src/PM.Entities/PM.Entities.csproj" />
+  <Project Path="src/PM.UI/PM.UI.csproj" />
+</Solution>
