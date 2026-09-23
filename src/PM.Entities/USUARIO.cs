@@ -36,5 +36,12 @@ namespace PM.Entities
             Estado = estado;
             FechaRegistro = fechaRegistro;
         }
+
+        public override string ToString()
+        {
+            return NombreCompleto;
+
+
+        }
     }
 }
